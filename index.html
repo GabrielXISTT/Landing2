@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Guia “Sua Primeira Tattoo” | XX Ink Studio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 700px;
+      width: 100%;
+      background-color: #1a1a1a;
+      border: 2px solid #e63946;
+      border-radius: 10px;
+      padding: 40px 30px;
+      box-shadow: 0 0 20px rgba(230, 57, 70, 0.5);
+      text-align: center;
+    }
+
+    h1, h2, h3 {
+      color: #e63946;
+      margin-bottom: 20px;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #e63946;
+    }
+
+    ul {
+      text-align: left;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .small {
+      font-size: 12px;
+      color: #aaa;
+      margin-top: 10px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 6px;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      background-color: #e63946;
+      color: #fff;
+      font-size: 18px;
+      padding: 14px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #d62839;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 12px;
+      color: #555;
+    }
+  </style>
+
+  <script>
+    function liberarFormulario() {
+      // Simula o pagamento. Em uma versão com API real, o retorno do pagamento chamaria essa função.
+      document.getElementById('formularioContato').classList.remove('hidden');
+      document.getElementById('botaoPagamento').classList.add('hidden');
+    }
+
+    function enviarContato() {
+      const contato = document.getElementById('contato').value.trim();
+      if (!contato) {
+        alert('Por favor, insira seu WhatsApp ou e-mail.');
+        return;
+      }
+      const msg = encodeURIComponent(`Olá! Acabei de comprar o e-book e o desconto de R$30 no XX Ink Studio. Meu contato: ${contato}`);
+      window.location.href = `https://wa.me/5521981130991?text=${msg}`;
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Vai fazer sua primeira tattoo?</h1>
+    <p>Evite arrependimentos e cicatrizes feias.</p>
+    <p>Baixe agora o <span class="highlight">guia definitivo</span> para quem vai se tatuar pela primeira vez e receba <span class="highlight">R$30 de desconto</span> na sua tattoo com a gente.</p>
+
+    <h2>O que tem dentro do E-book “Sua Primeira Tattoo”?</h2>
+    <ul>
+      <li>Dicas práticas antes, durante e depois da sessão</li>
+      <li>Como escolher a arte certa e o lugar ideal do corpo</li>
+      <li>Tudo sobre dor, tipos de agulha, cuidado com inflamações</li>
+      <li>Orientações que vão te poupar tempo, grana e arrependimento</li>
+      <li>Um bônus que você vai curtir MUITO (spoiler abaixo)</li>
+    </ul>
+
+    <h2>Bônus Exclusivo 🎁</h2>
+    <p>Você ainda recebe um <span class="highlight">voucher de R$30 de desconto</span> para usar na sua tattoo no XX Ink Studio.</p>
+    <p class="small">Validade: 30 dias | Válido para tattoos acima de R$150</p>
+
+    <h2>Quanto custa?</h2>
+    <p>R$19,90 — e você ainda recebe R$30 de volta em forma de desconto.</p>
+
+    <h2>Dúvidas Frequentes</h2>
+    <ul>
+      <li><strong>Como recebo o e-book?</strong> Por e-mail ou WhatsApp logo após o pagamento.</li>
+      <li><strong>O desconto é válido para qualquer tatuagem?</strong> Sim, em tattoos a partir de R$150 feitas no XX Ink Studio.</li>
+      <li><strong>Por quanto tempo posso usar o desconto?</strong> 30 dias após a compra.</li>
+      <li><strong>Posso transferir o voucher para outra pessoa?</strong> Não. O voucher é pessoal e intransferível.</li>
+    </ul>
+
+    <h2>Pronto pra fazer sua primeira tattoo com segurança e R$30 de vantagem?</h2>
+
+    <!-- Botão de Pagamento -->
+    <div id="botaoPagamento">
+      <a href="https://pag.ae/7-z6BxWKN" target="_blank">
+        <button onclick="setTimeout(liberarFormulario, 2000)">
+          PAGAR R$19,90 E GARANTIR MEU E-BOOK + DESCONTO
+        </button>
+      </a>
+    </div>
+
+    <!-- Formulário aparece só após pagamento -->
+    <div id="formularioContato" class="hidden">
+      <h3>Informe seu WhatsApp ou e-mail para receber o material:</h3>
+      <input type="text" id="contato" placeholder="Seu WhatsApp ou E-mail">
+      <button onclick="enviarContato()">QUERO RECEBER AGORA</button>
+    </div>
+
+    <footer>
+      © 2025 XX Ink Studio. Todos os direitos reservados.
+    </footer>
+  </div>
+</body>
+</html>
