@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Guia “Sua Primeira Tattoo” | XX Ink Studio</title>
+<style>
+  /* Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    color: white;
+  }
+
+  body {
+    background: url('fundo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .container {
+    background: rgba(0,0,0,0.75);
+    max-width: 420px;
+    width: 100%;
+    padding: 30px 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
+
+  p.description {
+    font-size: 16px;
+    margin-bottom: 25px;
+    line-height: 1.4;
+  }
+
+  button#payBtn {
+    background-color: #E31221;
+    border: none;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 15px;
+    width: 100%;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button#payBtn:hover {
+    background-color: #b50e19;
+  }
+
+  /* Form hidden initially */
+  form#infoForm {
+    margin-top: 30px;
+    display: none;
+    flex-direction: column;
+  }
+
+  form#infoForm input[type="text"], form#infoForm input[type="email"] {
+    padding: 14px;
+    font-size: 15px;
+    border-radius: 6px;
+    border: none;
+    margin-bottom: 15px;
+  }
+
+  form#infoForm button {
+    background-color: #222;
+    color: white;
+    padding: 14px;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  form#infoForm button:hover {
+    background-color: #444;
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      padding: 25px 20px 35px;
+      max-width: 90vw;
+    }
+    h1 {
+      font-size: 24px;
+    }
+    button#payBtn {
+      font-size: 14px;
+      padding: 13px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Guia “Sua Primeira Tattoo”</h1>
+  <p class="description">
+    Descubra tudo que você precisa saber para fazer sua primeira tatuagem com segurança, qualidade e estilo.
+  </p>
+  <button id="payBtn">PAGAR R$19,90 E GARANTIR MEU E-BOOK + DESCONTO</button>
+
+  <form id="infoForm" autocomplete="off">
+    <input type="text" id="contactInput" placeholder="Digite seu e-mail ou WhatsApp" required />
+    <button type="submit">Enviar</button>
+  </form>
+</div>
+
+<script>
+  const payBtn = document.getElementById('payBtn');
+  const infoForm = document.getElementById('infoForm');
+
+  // Link PagSeguro - substitua pelo seu link real
+  const pagSeguroLink = 'https://pag.ae/7_Tn9LpCK';
+
+  payBtn.addEventListener('click', () => {
+    // Simula redirecionamento para PagSeguro
+    window.open(pagSeguroLink, '_blank');
+
+    // Depois do pagamento (simulação), mostra o formulário
+    // Aqui simulamos com delay. Na prática, você terá que integrar uma confirmação real
+    setTimeout(() => {
+      payBtn.style.display = 'none';
+      infoForm.style.display = 'flex';
+    }, 500); // 0,5 segundos após abrir o PagSeguro
+  });
+
+  infoForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const contactValue = document.getElementById('contactInput').value.trim();
+
+    if (contactValue === '') {
+      alert('Por favor, preencha seu e-mail ou WhatsApp.');
+      return;
+    }
+
+    // Aqui você pode enviar os dados para seu servidor, banco, ou WhatsApp, etc.
+    // Por enquanto, só mostra mensagem de sucesso
+
+    alert('Obrigado! Em breve entraremos em contato.');
+    infoForm.reset();
+  });
+</script>
+
+</body>
+</html>
