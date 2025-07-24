@@ -8,8 +8,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: url('Story XX Ink Studio.jpg') no-repeat center center fixed;
-      background-size: cover;
+      background-color: #111;
       color: #fff;
       display: flex;
       justify-content: center;
@@ -20,7 +19,7 @@
     .container {
       max-width: 700px;
       width: 100%;
-      background-color: rgba(26, 26, 26, 0.92);
+      background-color: #1a1a1a;
       border: 2px solid #e63946;
       border-radius: 10px;
       padding: 40px 30px;
@@ -99,6 +98,7 @@
 
   <script>
     function liberarFormulario() {
+      // Simula o pagamento. Em uma versão com API real, o retorno do pagamento chamaria essa função.
       document.getElementById('formularioContato').classList.remove('hidden');
       document.getElementById('botaoPagamento').classList.add('hidden');
     }
@@ -148,7 +148,7 @@
 
     <!-- Botão de Pagamento -->
     <div id="botaoPagamento">
-      <a href="https://pag.ae/7_Tn9LpCK" target="_blank">
+      <a href="https://pag.ae/7-z6BxWKN" target="_blank">
         <button onclick="setTimeout(liberarFormulario, 2000)">
           PAGAR R$19,90 E GARANTIR MEU E-BOOK + DESCONTO
         </button>
